@@ -24,10 +24,26 @@ Removing duplicates ensures that:
 
 Each binding-site residue pattern appears only once downstream analysis (counts, statistics, ML training) is not biased your dataset is clean, consistent, and non-redundant. 
 
+______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
 ****Step 2 : PLIP Analysis****
 
-The second step to get the systematic analysis is to get the PLIP analysis. We have taken 
+This step performs large-scale protein–lipid interaction profiling using PLIP (Protein–Ligand Interaction Profiler) on an HPC cluster. We use a SLURM batch script that loops through thousands of PDB structures, runs PLIP for each file, and stores all interaction fingerprints in structured output folders.
+
+🔧 Overview
+
+PLIP automatically detects and characterizes:
+1. Hydrogen bonds
+2. Hydrophobic contacts
+3. π–stacking and π–cation interactions
+4. Salt bridges
+5. Halogen bonds
+6. Water-mediated interactions
+7. Atom-level donor/acceptor roles
+8. Interaction geometry and distances
+
+These features form the basis for downstream systematic lipid–protein interaction analysis, ML modeling, and pocket chemistry profiling.
+______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
 
 
