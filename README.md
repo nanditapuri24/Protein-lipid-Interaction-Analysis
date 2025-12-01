@@ -25,6 +25,12 @@ Removing duplicates ensures that:
 Each binding-site residue pattern appears only once downstream analysis (counts, statistics, ML training) is not biased your dataset is clean, consistent, and non-redundant. 
 
 
+****Step 2 : PLIP Analysis****
+
+The second step to get the systematic analysis is to get the PLIP analysis. We have taken 
+
+
+
 
 
 
