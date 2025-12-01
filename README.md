@@ -46,6 +46,34 @@ These features form the basis for downstream systematic lipid–protein interact
 ______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
 
+****Step 2 : PLIP Analysis: Summarizing PLIP Interaction Counts (Bash Parser)****
+
+After generating PLIP interaction reports for each PDB file, this script parses the report.txt outputs and counts the number of interactions of each type across the entire lipid class. This script uses awk to extract and count interaction rows from each section of the PLIP report and produces a single summary file containing the totals.
+
+📌 Purpose of This Script
+
+PLIP produces detailed interaction profiles in human-readable .txt files. Each file has sections such as:
+
+1. Hydrophobic Interactions
+2. Hydrogen Bonds
+3. Water Bridges
+4. π–Stacking interactions
+5. π–Cation interactions
+6. Halogen Bonds
+7. Salt Bridges
+8. Metal Complexation
+
+This script:
+1. Iterates through every PLIP result folder
+2. Reads the corresponding report.txt
+3. Counts how many interactions appear in each section
+4. Aggregates totals across the entire lipid class (e.g., Glycerophospholipid)
+5. Writes final totals to an output summary file
+
+______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+
+
 
 
 
