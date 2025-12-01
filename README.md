@@ -46,7 +46,7 @@ These features form the basis for downstream systematic lipid–protein interact
 ______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
 
-****Step 2 : PLIP Analysis: Summarizing PLIP Interaction Counts (Bash Parser)****
+****Step 3 : PLIP Analysis: Summarizing PLIP Interaction Counts (Bash Parser)****
 
 After generating PLIP interaction reports for each PDB file, this script parses the report.txt outputs and counts the number of interactions of each type across the entire lipid class. This script uses awk to extract and count interaction rows from each section of the PLIP report and produces a single summary file containing the totals.
 
@@ -72,7 +72,34 @@ This script:
 
 ______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
+⭐ ****Step 4: PFAM Family Analysis Using PLIP****
 
+This Jupyter notebook performs a PFAM family–level analysis of the lipid–protein interactions identified in previous steps. The goal is to understand which PFAM domains are most commonly associated with each lipid class and how their interaction patterns differ.
+
+🔍 What This Step Does
+
+1. Identify Unique PFAM Families: From the annotated dataset, we extract all PFAM domains associated with the proteins that bind each lipid class.
+
+2. Determine the Most Frequent PFAM Families: We compute the top recurring PFAM families to understand which structural domains are enriched for lipid binding.
+
+3. Link PFAM Families to PLIP Interaction Profiles: For each PFAM family, we locate the corresponding PLIP report.txt files and extract their interaction features.
+
+______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+🧬 ****Step 5: Amino Acid Frequency Analysis from PLIP Reports****
+
+This script processes all PLIP report.txt files for a given lipid class and extracts the amino acids involved in each interaction type. It then computes and summarizes how frequently each amino acid appears across all interactions. This allows you to analyze which residues dominate hydrophobic contacts, hydrogen bonds, salt bridges, π–interactions, etc., for each lipid class.
+
+🔍 What This Script Does
+
+1. Traverses all PLIP report folders for a specific lipid class
+2. Parses each interaction section (Hydrophobic, Hydrogen Bonds, Water Bridges, Salt Bridges, etc.)
+3. Extracts the amino acid (3-letter codes) from each table line
+4. Saves amino acids per interaction type into temporary files
+5. Aggregates and sorts the amino acid frequencies
+6. Writes the final counts into a single .txt summary file
+
+______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
 
 
